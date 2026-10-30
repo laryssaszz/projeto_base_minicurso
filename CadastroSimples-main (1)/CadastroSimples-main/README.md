@@ -1,142 +1,162 @@
+# Sistema de Cadastro de Usuários
 
-# Sistema de Cadastro Simples com HTML, CSS E JS.
+Projeto-base desenvolvido em HTML, CSS e JavaScript para atividades práticas do **Minicurso de Git e GitHub – UFC Campus de Crateús**.
 
-Desenvolvido por: João Henrique de Oliveira
+**Desenvolvedor original:** João Henrique de Oliveira.
 
-***
-## Objetivo do Projeto
+## 1. Objetivo do Projeto
 
-O Principal objetivo do projeto, era desenvolver um sistema de cadastro de usuários, utilizando JavaScript e LocalStorage para armazenar os Dados dos usuários.
+O projeto consiste em um sistema simples de cadastro de usuários, utilizando JavaScript e LocalStorage para armazenar e manipular as informações cadastradas.
 
+A proposta é utilizar esse sistema como ponto de partida para atividades práticas de versionamento de código e colaboração, permitindo que os participantes explorem os recursos do Git e GitHub durante o minicurso.
 
-## Desenvolvimento do Projeto
+## 2. Tecnologias Utilizadas
 
-O Projeto de certa maneira, foi bem simples de se fazer, pois já tinha conhecimento prévio das funcionalidades e também das ferramentas utilizadas (JS e LocalStorage).
+- HTML5
+- CSS3
+- JavaScript
+- LocalStorage
 
-Pelo fato do Projeto ser simples e não muito extenso, decidi por usar apenas a estrutura básica de pastas para Projetos Web, que consiste:
+## 3. Estrutura do Projeto
 
+```text
+projeto_base_minicurso/
+├── README.md
+├── .gitignore
+└── src/
+    ├── index.html
+    └── assets/
+        ├── images/
+        ├── css/
+        │   └── styles.css
+        └── js/
+            ├── classes/
+            │   ├── userManager.js
+            │   ├── userFactory.js
+            │   └── user.js
+            ├── utils/
+            │   └── utils.js
+            └── index.js
 ```
-├── README.md 
-├──.gitignore
-├── src
-  ├── index.html
-  └── assets
-        ├───images
-        ├───css
-        │ └── styles.css
-        └──js
-          ├──classes
-          │     ├──userManager.js
-          │     ├──userFactory.js
-          │     └──user.js
-          ├──utils
-          │     └──utils.js
-          └──index.js
-```
-A pasta `images`, possui apenas prints para a criação do Readme
 
-O Arquivo `index.html`, contém o HTML para criar a visualização da tela, onde há um formulário básico e uma tabela, para realizar a exibição dos usuários cadastrados.
+### Descrição dos principais arquivos
 
-O Arquivo `styles.css`, contem o CSS para realizar a estilização básica do arquivo HTML.
+- **index.html:** contém a estrutura HTML da aplicação, incluindo o formulário de cadastro e a tabela de usuários.
+- **styles.css:** responsável pela estilização e aparência da interface.
+- **index.js:** concentra a lógica de manipulação da DOM e os eventos da aplicação.
+- **userFactory.js:** responsável pela criação de usuários utilizando o padrão Factory Method.
+- **userManager.js:** realiza o gerenciamento dos usuários, incluindo consultas, filtros, inserções e exclusões.
+- **user.js:** define os atributos e métodos relacionados aos usuários.
+- **utils.js:** reúne funções auxiliares utilizadas em diferentes partes do sistema.
+- **images/:** contém imagens utilizadas na documentação do projeto.
 
-O `index.js`, contém toda a lógica de manipulação da DOM chamando os métodos necessários para cada evento.
+## 4. Funcionalidades
 
-O `userFactory.js` é a classe que concentra toda a lógica e métodos para criação usuários utilizando o Factory Method.
+Atualmente, o sistema disponibiliza as seguintes funcionalidades:
 
-O `userManager.js` é a classe responsável pela manipulação dos dados dos usuários, como consulta, filtro, inserção e remoção. 
+- Cadastro de usuários;
+- Exclusão de usuários;
+- Pesquisa e filtragem de usuários pelo nome;
+- Validação de idade mínima de 18 anos;
+- Verificação de e-mails e telefones duplicados.
 
-O `user.js` é a classe responsavél por definir os atributos do usuário e seus metódos, caso tenha algum.
+## 5. Como Executar o Projeto
 
-O `utils.js` é um arquivo .js que possui diversas funções que podem ser utilizadas muitas vezes, por diferentes arquivos, como conversões por exemplo.
+Para utilizar o sistema, siga as etapas abaixo:
 
+**1. Clone o repositório:**
 
-
-## Funcionalidades
-
-- Cadastro de usuários
-- Exclusão de usuários
-- Filtrar por nome de usuário
-
-
-## Utilizando o Sistema
-
-Clone o projeto ou baixe os arquivos direto pelo navegador.
 ```bash
-  git clone https://link-para-o-projeto
+git clone https://github.com/laryssaszz/projeto_base_minicurso.git
 ```
 
-Entre na pasta src do projeto.
+**2. Entre na pasta do projeto:**
 
 ```bash
-  cd src
+cd projeto_base_minicurso
 ```
-E basta abrir o arquivo index.html.
 
-### Inicio
-***
-Ao abrir, você irá se deparar com essa tela, onde você conseguirá fazer tudo através dela:
+**3. Acesse a pasta `src` e abra o arquivo `index.html` no navegador.**
 
-![App Screenshot](./src/assets/images/Inicio.png)
+Não é necessário instalar dependências ou configurar um banco de dados para executar a aplicação.
 
-### Cadastrando um Usuário
-***
-Para cadastrar um usuário, basta Preencher todos os campos de maneira correta e clicar em cadastrar novo usuário:
-> Lembretes:
-* E-mail e Telefones são únicos para cada usuário, não podem ser repetidos
-* Usuário deve ser maior de 18 anos para ser cadastrado
+## 6. Demonstração do Sistema
 
-Caso esteja tudo nos conformes, um alerta confirmando a adição será exibido:
+### 6.1. Tela Inicial
 
-![App Screenshot](./src/assets/images/Sucesso.png)
+Ao abrir o sistema, será exibida a interface principal, onde é possível realizar as operações de cadastro, exclusão e pesquisa de usuários.
 
-e Logo em seguida da confirmação, o usuário aparecerá na tabela
+![Tela inicial](./src/assets/images/Inicio.png)
 
-![App Screenshot](./src/assets/images/Sucesso2.png)
+### 6.2. Cadastro de Usuários
 
-### Excluindo usuário
-***
-Para excluir um usuário Desejado, basta clicar em Excluir na linah do usuário e logo em seguida confirmar o alerta com OK, da seguinte maneira:
+Para cadastrar um usuário, basta preencher todos os campos obrigatórios e clicar no botão de cadastro.
 
-![App Screenshot](./src/assets/images/Exclusao.png)
+**Regras de validação:**
+- O e-mail deve ser único;
+- O telefone deve ser único;
+- O usuário deve ter pelo menos 18 anos.
 
-Um Alerta de Confirmação será emitido
+Após o preenchimento correto das informações, o sistema exibirá uma mensagem de confirmação.
 
-![App Screenshot](./src/assets/images/SucessoExcl.png)
+![Cadastro realizado](./src/assets/images/Sucesso.png)
 
-E Depois o mesmo será removido
+Em seguida, o usuário será adicionado à tabela de registros.
 
-![App Screenshot](./src/assets/images/SucessoExcl2.png)
+![Usuário cadastrado](./src/assets/images/Sucesso2.png)
 
-**Caso você tenha cancelado a operação**
+### 6.3. Exclusão de Usuários
 
-Apenas irá mostrar um alerta e nada acontecerá
-![App Screenshot](./src/assets/images/CanceladaExcl.png)
+Para excluir um usuário, basta clicar no botão correspondente à exclusão na linha do registro desejado.
 
+O sistema solicitará uma confirmação antes de realizar a operação.
 
+![Confirmação de exclusão](./src/assets/images/Exclusao.png)
 
-### Possíveis Erros ao cadastrar usuário
-***
-Caso tente cadastrar um usuário menor de 18 anos, o sistema irá emitir um alerta e reiniciar a operação de cadastrado
+Após confirmar, o usuário será removido da tabela.
 
-![App Screenshot](./src/assets/images/ErroIdade.png)
+![Usuário excluído](./src/assets/images/SucessoExcl2.png)
 
-### Filtrando Usuário
-***
-Caso tenha mais que um usuário e deseje pesquisar/filtrar pelo nome, basta você digitar o nome do usuário e Clicar em Pesquisar que aparececerá somente os usuários que forem iguais ao que você digitou:
+Caso a operação seja cancelada, nenhum dado será removido.
 
-![App Screenshot](./src/assets/images/Filtro1.png)
+### 6.4. Pesquisa de Usuários
 
-![App Screenshot](./src/assets/images/Filtro2.png)
+O sistema também permite pesquisar usuários pelo nome.
 
-Caso deseje remover o filtro, basta clicar em limpar pesquisa e pronto, voltrá ao normal
+Basta digitar o nome desejado no campo de pesquisa e clicar em **Pesquisar**. Os registros correspondentes serão exibidos na tabela.
 
-![App Screenshot](./src/assets/images/Filtro1.png)
+![Pesquisa de usuários](./src/assets/images/Filtro1.png)
 
-### Outros possíveis erros
-***
-Caso você tente adicionar um usuário no qual ja tenha email e/ou telefone cadastrado, o seguinte alerta irá aparecer: 
+Para visualizar novamente todos os registros, basta utilizar a opção de limpar pesquisa.
 
-![App Screenshot](./src/assets/images/ErroTelEmail.png)
+### 6.5. Mensagens de Erro e Validações
 
+O sistema possui algumas validações para evitar cadastros incorretos.
 
+Entre as situações verificadas estão:
 
+- Tentativa de cadastro de usuários menores de 18 anos;
+- Tentativa de utilização de e-mail já cadastrado;
+- Tentativa de utilização de telefone já cadastrado.
+
+Quando alguma dessas situações ocorre, o sistema apresenta uma mensagem informando o problema.
+
+![Erro de cadastro](./src/assets/images/ErroTelEmail.png)
+
+---
+
+## 7. Proposta de Utilização no Minicurso
+
+Este projeto será utilizado como base para as atividades práticas do minicurso de Git e GitHub.
+
+A partir da estrutura existente, os participantes poderão realizar modificações, adicionar funcionalidades e trabalhar de forma colaborativa, praticando os principais recursos de versionamento de código.
+
+**Atividades sugeridas:**
+
+- Criar repositórios e realizar commits;
+- Criar e utilizar branches;
+- Desenvolver novas funcionalidades;
+- Abrir Pull Requests;
+- Simular e resolver conflitos de mesclagem (*merge conflicts*).
+
+O objetivo é proporcionar uma experiência prática com o fluxo de versionamento e colaboração utilizado no desenvolvimento de software.
